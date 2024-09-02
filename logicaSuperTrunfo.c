@@ -9,22 +9,19 @@ int main() {
     // Definição das variáveis para armazenar as propriedades das cidades
     // Você pode utilizar o código do primeiro desafio
 
-    int Acodcidade = 0;
+    char Acodcidade[5] = "";  // Alterado para char[5]
     char Anome[20] = "";
     int Apopulacao = 0; // apesar deste curso não ensinar DEVES-SE INICIALIZAR A VARIAVEL COM UM VALOR PARA NÃO CONTER LIXO!
     int Aarea  = 0;
-    int Apib = 0;
+    float Apib = 0.0;  // Alterado para float
     int Anpontoturistico=0;
 
-    int Bcodcidade = 0;
+    char Bcodcidade[5] = "";  // Alterado para char[5]
     char Bnome[20] = "";
     int Bpopulacao = 0; // apesar deste curso não ensinar DEVES-SE INICIALIZAR A VARIAVEL COM UM VALOR PARA NÃO CONTER LIXO!
     int Barea  = 0;
-    int Bpib = 0;
+    float Bpib = 0.0;  // Alterado para float
     int Bnpontoturistico=0;
-
-
-
 
     // Cadastro das Cartas:
     // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
@@ -36,7 +33,7 @@ int main() {
     // scanf("%s", codigo);
     printf("\n ******** INSIRA OS DADOS DA CARTA A");
     printf("\nCodigo da cidade > ");
-    scanf("%d", &Acodcidade); // esse curso poderia ensinar que o & serve para fornescer o ponteiro de armazenamento da variavel
+    scanf("%s", Acodcidade); // Alterado para %s para aceitar string
 
     printf("\nNome > ");
     scanf("%s", Anome);  
@@ -48,7 +45,7 @@ int main() {
     scanf("%d", &Aarea);
 
     printf("\nPIB > ");
-    scanf("%d", &Apib);
+    scanf("%f", &Apib);  // Alterado para %f para aceitar float
 
     printf("\nNumero de pontos turísticos > ");
     scanf("%d", &Anpontoturistico);
@@ -56,7 +53,7 @@ int main() {
 
     printf("\n\n\n\n\n\n ******** INSIRA OS DADOS DA CARTA B \n");
     printf("\nCodigo da cidade > ");
-    scanf("%d", &Bcodcidade); // esse curso poderia ensinar que o & serve para fornescer o ponteiro de armazenamento da variavel
+    scanf("%s", Bcodcidade); // Alterado para %s para aceitar string
 
     printf("\nNome > ");
     scanf("%s", Bnome);  
@@ -68,25 +65,29 @@ int main() {
     scanf("%d", &Barea);
 
     printf("\nPIB > ");
-    scanf("%d", &Bpib);
+    scanf("%f", &Bpib);  // Alterado para %f para aceitar float
 
     printf("\nNumero de pontos turísticos > ");
     scanf("%d", &Bnpontoturistico);
 
     printf("\n\n\n\n\n\n *******RESULTADO******* \n\n\n\n\n\n" );
 
-if (Apib > Bpib) 
-	{printf("Carta A da cidade %s e a vencedora pois seu PIB e maior com o valor: %d", Anome, Apib);}
+    if (Apib > Bpib) 
+    {
+        printf("Carta A da cidade %s e a vencedora pois seu PIB e maior com o valor: %.2f", Anome, Apib);  // Alterado para %.2f para imprimir float
+    }
     else 
-		{if (Apib < Bpib)  
-			{
-				printf("Carta B da cidade %s e a vencedora pois seu PIB e maior com o valor: %d", Bnome, Bpib);}
-			else
-				{printf("AS CARTAS A E B EMPATARAM, elas possuem o mesmo PIB no valor de: %d",Bpib);}
-		} ;
-		
-	
-
+    {
+        if (Apib < Bpib)  
+        {
+            printf("Carta B da cidade %s e a vencedora pois seu PIB e maior com o valor: %.2f", Bnome, Bpib);  // Alterado para %.2f para imprimir float
+        }
+        else
+        {
+            printf("AS CARTAS A E B EMPATARAM, elas possuem o mesmo PIB no valor de: %.2f", Bpib);  // Alterado para %.2f para imprimir float
+        }
+    } ;
+        
     printf("\n\n\n\n\n\n ******* FIM DO DO SUPER TRUNFO ******* \n\n\n\n\n\n" );
     // (Repita para cada propriedade)
 
